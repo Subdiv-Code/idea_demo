@@ -44,7 +44,10 @@ import {GLTFLoader} from '../js/GLTFLoader.js';
 
 	// Геометрия
 	const loader = new GLTFLoader();
-	loader.load( 'model/all-castom/project_1/Project_1.gltf', function ( gltf ) {
+	loader.load( 'model/all-castom/project_1/Project_1_path_2.glb', function ( gltf ) {
+		scene.add( gltf.scene );
+	});
+	loader.load( 'model/all-castom/project_1/Project_1_path_1.glb', function ( gltf ) {
 		scene.add( gltf.scene );
 	});
 	loader.load( 'model/all/Env_Tree.glb', function ( gltf ) {
