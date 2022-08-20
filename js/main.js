@@ -16,8 +16,8 @@ import {GLTFLoader} from '../js/GLTFLoader.js';
 	//Камера
 	const camera = new THREE.PerspectiveCamera( 30, document.getElementById('three-conteiner').offsetWidth / document.getElementById('three-conteiner').offsetHeight, 0.1, 1000 );
 	camera.position.y = 0;
-	camera.position.x = -40;
-	camera.position.z = 58;
+	camera.position.x = -33;
+	camera.position.z = 62;
 	// camera.zoom = 0.5;
 	// //camera.zoom = zoomFactor;
 	// camera.updateProjectionMatrix();
