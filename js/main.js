@@ -67,6 +67,10 @@ import {GLTFLoader} from '../js/GLTFLoader.js';
 		MIDDLE: THREE.MOUSE.ROTATE,
 		RIGHT: THREE.MOUSE.ROTATE
 	};
+	controls.touches = {
+		ONE: THREE.TOUCH.ROTATE,
+		TWO: THREE.TOUCH.DOLLY
+	};
 
 	//Вызовы
 	window.addEventListener( 'resize', onWindowResize );
