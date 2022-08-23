@@ -6,6 +6,24 @@ import {GLTFLoader} from '../js/GLTFLoader.js';
 
 	console.log(document.getElementById('three-conteiner').offsetHeight);
 	console.log(document.getElementById('three-conteiner').offsetWidth);
+	
+	// Загрузка
+	var progress = document.createElement('div');
+	progress.className = "progress";
+	var progressBar = document.createElement('div');
+	progressBar.className = "progress-bar";
+	
+	progress.appendChild(progressBar);
+	document.body.appendChild(progress);
+	
+	var manager = new THREE.LoadingManager();
+	manager.onProgress = function ( item, loaded, total ) {
+		progressBar.style.width = (loaded / total * 100) + '%';
+	};
+	manager.onLoad = function () {
+		console.log('del');
+		document.querySelector('.progress').remove();
+	};
 
 	// Настройки сцены
 	const scene = new THREE.Scene();
