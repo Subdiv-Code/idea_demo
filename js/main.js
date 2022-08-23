@@ -61,7 +61,7 @@ import {GLTFLoader} from '../js/GLTFLoader.js';
 	});
 
 	// Геометрия
-	const loader = new GLTFLoader();
+	const loader = new GLTFLoader(manager);
 	loader.load( 'model/all-castom/project_1/Project_1_path_2.gltf', function ( gltf ) {
 		scene.add( gltf.scene );
 	});
