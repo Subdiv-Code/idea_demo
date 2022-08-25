@@ -12,6 +12,7 @@
   font-family: "Segoe UI", Roboto, Helvetica, Arial;
   font-size: 24px;
   color: #4e4e4e;
+  z-index: 9999;
 }
 h1{
   font-size: 24px;
