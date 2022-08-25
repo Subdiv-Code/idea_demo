@@ -3,7 +3,7 @@ import * as THREE from '../js/three.module.js';
 import {OrbitControls} from '../js/OrbitControls.js';
 import {GLTFLoader} from '../js/GLTFLoader.js';
 import { KTX2Loader } from '../js/KTX2Loader.js';
-//import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
+import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 //import {RGBELoader} from '../js/RGBELoader.js';
 
 	console.log(document.getElementById('three-conteiner').offsetHeight);
@@ -69,9 +69,9 @@ import { KTX2Loader } from '../js/KTX2Loader.js';
 	const loader = new GLTFLoader(manager);
 	loader.setKTX2Loader( ktx2Loader );
 	console.log(loader.setKTX2Loader);
-	//loader.setMeshoptDecoder( MeshoptDecoder );
+	loader.setMeshoptDecoder( MeshoptDecoder );
 	
-	loader.load( 'model/all-castom/project_1/Project_1_export1.glb', function ( gltf ) {
+	loader.load( 'model/all-castom/project_1/Project_1_export2.glb', function ( gltf ) {
 		scene.add( gltf.scene );
 	});
 	loader.load( 'model/all/Env_Tree.glb', function ( gltf ) {
