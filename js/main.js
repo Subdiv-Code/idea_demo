@@ -23,7 +23,6 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 		progressBar.style.width = (loaded / total * 100) + '%';
 	};
 	manager.onLoad = function () {
-		console.log('del');
 		document.querySelector('.progress').remove();
 	};
 
