@@ -71,7 +71,7 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 	console.log(loader.setKTX2Loader);
 	loader.setMeshoptDecoder( MeshoptDecoder );
 	
-	loader.load( 'model/all-castom/project_1/Project_1_export2.glb', function ( gltf ) {
+	loader.load( 'model/all-castom/project_1/Project_1.gltf', function ( gltf ) {
 		scene.add( gltf.scene );
 	});
 	loader.load( 'model/all/Env_Tree.glb', function ( gltf ) {
