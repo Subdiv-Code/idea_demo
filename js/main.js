@@ -64,12 +64,10 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 	});
 
 	// Геометрия
+	const loader = new GLTFLoader();
 	
 	const ktx2Loader = new KTX2Loader().setTranscoderPath( 'js/decoder/libs/' ).detectSupport( renderer );
-
-	const loader = new GLTFLoader();
 	loader.setKTX2Loader( ktx2Loader );
-	console.log(loader.setKTX2Loader);
 	loader.setMeshoptDecoder( MeshoptDecoder );
 	
 	loader.load( 'model/all-castom/project_1/Project_1.gltf', function ( gltf ) {
