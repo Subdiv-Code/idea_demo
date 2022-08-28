@@ -10,6 +10,11 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 	console.log(document.getElementById('three-conteiner').offsetWidth);
 	
 	// Загрузка
+	var progress = document.createElement('div');
+	progress.className = "progress";
+	var progressBar = document.createElement('div');
+	progressBar.className = "progress-bar";
+	
 	THREE.DefaultLoadingManager.onStart = function (item, loaded, total) {
 		progress.appendChild(progressBar);
 		document.body.appendChild(progress);
