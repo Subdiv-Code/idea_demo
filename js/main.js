@@ -10,20 +10,17 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 	console.log(document.getElementById('three-conteiner').offsetWidth);
 	
 	// Загрузка
-	var progress = document.createElement('div');
-	progress.className = "progress";
-	var progressBar = document.createElement('div');
-	progressBar.className = "progress-bar";
-	
-	progress.appendChild(progressBar);
-	document.body.appendChild(progress);
-	
-	var manager = new THREE.LoadingManager();
-	manager.onProgress = function ( item, loaded, total ) {
+	THREE.DefaultLoadingManager.onStart = function (item, loaded, total) {
+		progress.appendChild(progressBar);
+		document.body.appendChild(progress);
+	}
+	THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
 		progressBar.style.width = (loaded / total * 100) + '%';
+		console.log(loaded, total);
 	};
-	manager.onLoad = function () {
+	THREE.DefaultLoadingManager.onLoad = function (item, loaded, total) {
 		document.querySelector('.progress').remove();
+		console.log("end");
 	};
 
 	// Настройки сцены
@@ -65,7 +62,7 @@ import { MeshoptDecoder } from '../js/decoder/meshopt_decoder.module.js';
 	
 	const ktx2Loader = new KTX2Loader().setTranscoderPath( 'js/decoder/libs/' ).detectSupport( renderer );
 
-	const loader = new GLTFLoader(manager);
+	const loader = new GLTFLoader();
 	loader.setKTX2Loader( ktx2Loader );
 	console.log(loader.setKTX2Loader);
 	loader.setMeshoptDecoder( MeshoptDecoder );
